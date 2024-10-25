@@ -1,6 +1,6 @@
 package api_inventario_robotica;
 
-public class Articulo {
+public class Articulo implements Comparable<Articulo> {
 
     //ENCAPSULAMIENTO
     //SOLO HACER VISIBLE AL EXTERIOR LO NECESARIO PARA TENER UN "MEJOR CONTROL"
@@ -84,4 +84,20 @@ public class Articulo {
         //prueba.
     }
 
+    //ORDENAMIENTO NATURAL...
+    @Override
+    public int compareTo(Articulo obj_to_comparar) {
+        /*
+        > 0  Este objeto es "mayor" que el objeto con el que se compara
+        == 0 cuando este objeto es "igual" que el objeto con el que se compara
+        < 0 Este objeto es "menor" que el objeto con el que se compara
+         */
+        int v = this.nombre.compareTo(obj_to_comparar.nombre) * -1;
+        return v;
+
+    }
+
+    public int obtenerCantidad(){
+        return cantidad;
+    }
 }

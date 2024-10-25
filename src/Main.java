@@ -3,6 +3,7 @@
 
 import api_inventario_robotica.*; //importa todas las clases del paquete
 
+import java.util.Collections;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -25,12 +26,13 @@ public class Main {
         Scanner sc;
         */
 
-
+/*
         //PARTE 2
 
         Inventario inventario_laboratorio;
         inventario_laboratorio = new Inventario();
 
+        //CREACION DE OBJETOS
         Articulo aux;
         Random rnd = new Random(5);
         for (int i = 0; i < 10; i++) {
@@ -38,6 +40,7 @@ public class Main {
             inventario_laboratorio.agregarArticulo(aux);
         }
 
+        //IMPRESION DE TODOS LOS OBJETOS
         for (int i = 0; i < 10; i++) {
             aux = inventario_laboratorio.obtenerArticuloDelIndice(i);
             //System.out.println(aux.toString());
@@ -45,7 +48,30 @@ public class Main {
         }
         System.out.println();
 
+        //inventario_laboratorio.ordenarInventario();
+        inventario_laboratorio.ordenarPorCantidad();
 
+        //impresion de los objetos ordenados
+        System.out.println("Ordenados:");
+        for (int i = 0; i < 10; i++) {
+            aux = inventario_laboratorio.obtenerArticuloDelIndice(i);
+            //System.out.println(aux.toString());
+            System.out.println(aux);
+        }
+        System.out.println();
+
+*/
+
+        //PARTE 3
+        //no se pueden generar objetos de clases abstractas
+        Persona p;
+        p = new Alumno(0, "Javier");
+        p.saludar("Jasinto");
+        p.despedirse();
+
+        p = new Docente(1, "PP");
+        p.saludar("Miguel");
+        p.despedirse();
 
     }
 }

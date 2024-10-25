@@ -1,6 +1,9 @@
 package api_inventario_robotica;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Inventario {
 
@@ -8,7 +11,7 @@ public class Inventario {
 
     //estructuras dinamicas (listas enlazadas, listas doblemente enlazadas, listas circulares, arboles, etc)
 
-    private LinkedList<Articulo> articulos; //LISTA DOBLEMENTE ENLAZADA
+    private List<Articulo> articulos; //LISTA DOBLEMENTE ENLAZADA
 
     public Inventario(){
         articulos = new LinkedList<>(); //instancia la lista que almacenara a los articulos
@@ -27,6 +30,15 @@ public class Inventario {
         }
 
         return articulo;
+    }
+
+    public void ordenarInventario(){
+        Collections.sort(articulos);
+        //Arrays.sort();
+    }
+
+    public void ordenarPorCantidad(){
+        Collections.sort(articulos, new OrdenamientoArticuloCantidad());
     }
 
 }
